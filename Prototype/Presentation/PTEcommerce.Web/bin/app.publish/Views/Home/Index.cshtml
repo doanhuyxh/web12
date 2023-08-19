@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Header -->
+<header class="container-fluid header">
+    <div class="row">
+        <div class="col">
+            <div class="logo-small">
+                <img src="~/Assets/assets/images/HAMEDIA.png" alt="" class="img mt-2" style="width: auto; height: 45px;">
+            </div>
+        </div>
+        <div class="col-auto align-self-center">
+            <button type="button" class="btn btn-link menu-btn text-color-theme mt-2">
+                <i class="bi bi-list size-24"></i>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- Header ends -->
+<!-- main page content -->
+<div class="main-container container">
+
+    <!-- offerslides -->
+    <div class="swiper-container offerslides" style="padding-bottom: 10px !important;">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="card shadow-sm card-theme">
+                    <div class="card-body p-0">
+                        <img src="/Assets/assets/images/3348e2e2-628a-4aab-a199-c224b1da8aec.jpg" alt="" class="mw-100 border-radius-10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card shadow-sm card-themeborder-radius-5">
+                    <div class="card-body p-0">
+                        <img src="/Assets/assets/images/3348e2e2-628a-4aab-a199-c224b1da8aec.jpg" alt="" class="mw-100 border-radius-10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card shadow-sm card-theme">
+                    <div class="card-body p-0">
+                        <img src="/Assets/assets/images/3348e2e2-628a-4aab-a199-c224b1da8aec.jpg" alt="" class="mw-100 border-radius-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body" style="padding:5px 10px;">
+                    <div class="row">
+                        <div class="col-auto pe-0">
+                            <i class="bi bi-bell"></i>
+                        </div>
+                        <div class="col">
+                            <marquee>Chào mừng bạn đến với website</marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products -->
+    <div class="row pb-3">
+        <div class="col">
+            <h5 class="mb-0 text-white">ĐƠN ĐẶT HÀNG</h5>
+        </div>
+    </div>
+
+    <div class="row gx-2 mb-3">
+        <div class="col-3 col-md-3 col-lg-3 text-center">
+            <a href="/choi-game"><img src="/Assets/assets/images/loho-01.png" class=" w-80" alt=""></a>
+        </div>
+
+        <div class="col-3 col-md-3 col-lg-3 text-center">
+            <a href="/choi-game"><img src="/Assets/assets/images/loho-02.png" class=" w-80" alt=""></a>
+        </div>
+
+        <div class="col-3 col-md-3 col-lg-3 text-center">
+            <a href="/choi-game"><img src="/Assets/assets/images/loho-03.png" class=" w-80" alt=""></a>
+        </div>
+
+        <div class="col-3 col-md-3 col-lg-3 text-center">
+            <a href="/choi-game"><img src="/Assets/assets/images/loho-04.png" class=" w-80" alt=""></a>
+        </div>
+    </div>
+    <!-- trending items -->
+    <div class="row mb-3">
+        <div class="col">
+            <h5 class="mb-0 text-center text-white">ĐƠN HÀNG GẦN ĐÂY</h5>
+        </div>
+    </div>
+    <!-- trending -->
+    <div class="swiper-container trendingslides2222 size-15">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper listCurrentOrder">
+            <!-- Slides -->
+        </div>
+        <div class="swiper-pagination trendingslides2222-pagination "></div>
+    </div>
+    <!-- offerslides -->
+    <div class="swiper-container offerslides">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="card shadow-sm card-theme">
+                    <div class="card-body p-0">
+                        <img src="/Assets/assets/images/a5.jpg" alt="" class="mw-100 border-radius-10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card shadow-sm card-themeborder-radius-5">
+                    <div class="card-body p-0">
+                        <img src="/Assets/assets/images/a5.jpg" alt="" class="mw-100 border-radius-10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card shadow-sm card-theme">
+                    <div class="card-body p-0">
+                        <img src="/Assets/assets/images/a5.jpg" alt="" class="mw-100 border-radius-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm product mb-3">
+                <div class="card-body p-0">
+                    <div class="row gx-2 px-3 py-2">
+                        <div class="col">
+                            <input type="radio" id="radioCheckedAll" checked name="radioChecked" class="form-check-input" />
+                            <label>Tất cả</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" id="radioCheckedMyAccount" name="radioChecked" class="form-check-input" />
+                            <label>Của tôi</label>
+                        </div>
+                    </div>
+                    <div class=" h-300 overflow-scroll">
+                        <ul class="list-group list-group-flush bg-none" id="listHistoryPlayWin">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main page content ends -->

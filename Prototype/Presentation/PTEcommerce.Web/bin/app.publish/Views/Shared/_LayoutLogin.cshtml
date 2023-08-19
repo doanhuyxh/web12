@@ -1,0 +1,94 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+    var mems = PTEcommerce.Web.Models.SessionCustomer.GetUser();
+    var mobile = Request.Browser.IsMobileDevice;
+    var notification = (marketplace.Notification)ViewBag.Notification;
+    var color = Framework.Configuration.Config.GetConfigByKey("color");
+}
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>PE88</title>
+
+    <!-- manifest meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="~/Assets/assets/img/favicon180.png" sizes="180x180">
+    <link rel="icon" href="~/Assets/assets/img/favicon32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="~/Assets/assets/img/favicon16.png" sizes="16x16" type="image/png">
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+
+    <!-- bootstrap icons -->
+    <link href="~/Assets/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/Assets/toastr/toastr.css" rel="stylesheet" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="~/Assets/assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+
+    <!-- style css for this template -->
+    <link href="~/Assets/assets/css/style.css?v=@DateTime.Now.ToString("yyyyMMddHHmmss")" rel="stylesheet" id="style">
+</head>
+
+<body class="body-scroll d-flex flex-column h-100 dark-bg bg1" data-page="signin">
+
+    <!-- loader section -->
+    <div class="container-fluid loader-wrap">
+        <div class="row h-100">
+            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                <img src="~/Assets/assets/images/loading.png" style="width: 60px; height: 60px" />
+                <p class="pt-2">HỒNG ÂN ENTERTAIMENT<br><strong>VUI LÒNG CHỜ...</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- loader section ends -->
+    <!-- Begin page content -->
+    <main class="container-fluid h-100 main-container">
+        @RenderBody()
+        <div class="main-container container">
+            <div class="row pb-2">
+                <div class="col-12 text-center text-white">
+                    <script>document.write(new Date().getFullYear())</script> © Copyright - CÔNG TY CỔ PHẦN TRUYỀN THÔNG HỒNG ÂN ENTERTAIMENT
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- Required jquery and libraries -->
+    <script src="~/Assets/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Assets/assets/js/popper.min.js"></script>
+    <script src="~/Assets/assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
+    <!-- cookie js -->
+    <script src="~/Assets/assets/js/jquery.cookie.js"></script>
+
+    <!-- swiper script -->
+    <script src="~/Assets/assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
+
+    <!-- page level custom script -->
+    <script src="~/Assets/assets/js/app.js"></script>
+
+    <!-- Customized jquery file  -->
+    <script src="~/Assets/assets/js/main.js"></script>
+    <script src="~/Assets/assets/js/color-scheme.js"></script>
+    <script src="~/Assets/toastr/toastr.js"></script>
+    <script src="~/Assets/controller/base.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+    <script src="~/Assets/controller/accounting.js"></script>
+    <script src="~/Assets/controller/@(controller).js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

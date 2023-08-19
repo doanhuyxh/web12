@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "ĐĂNG NHẬP";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<div class="row h-100">
+    <div class="col-12 mx-auto text-center">
+        <div class="row h-100">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 mx-auto align-self-center">
+                <h2 class="text-center mb-4"><img src="/Assets/assets/images/HAMEDIA.png" class="img w-100"></h2>
+                <div class="card card-light shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="username" placeholder="Nhập tài khoản" />
+                            <label for="username">Tài khoản</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="Nhập tài khoản" />
+                            <label for="password">Mật khẩu</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="repassword" placeholder="Nhập tài khoản" />
+                            <label for="repassword">Nhập lại mật khẩu</label>
+                        </div>
+
+                        <div class="d-grid">
+                            <a href="javascript:void(0)" id="btnRegister" class="btn btn-lg btn-default shadow-sm">
+                                ĐĂNG KÝ TÀI KHOẢN
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center">Đã có tài khoản <a href="/dang-ky"><b>Đăng nhập ngay</b></a></p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

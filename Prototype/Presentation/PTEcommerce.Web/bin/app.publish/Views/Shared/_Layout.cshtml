@@ -1,0 +1,202 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+    var mems = PTEcommerce.Web.Models.SessionCustomer.GetUser();
+    var mobile = Request.Browser.IsMobileDevice;
+}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="ZingChart - Dịch vụ tăng hạng trên Zing MP3 giúp ca sĩ nâng cao thứ hạng  các sản phẩm âm nhạc chất lượng trên BXH . Tham gia cùng chúng tôi để nhận được lợi ích to lớn khi giúp các ca sĩ tăng hạng các ca khúc trên Zing MP3.">
+    <meta property="og:type" content="Website">
+    <meta property="og:url" content="https://cardvip.vn/" />
+    <meta property="og:image" content="https://i.imgur.com/kgkGFB6.png">
+    <meta property="og:description" content="ZingChart - Dịch vụ tăng hạng trên Zing MP3 giúp ca sĩ nâng cao thứ hạng  các sản phẩm âm nhạc chất lượng trên BXH . Tham gia cùng chúng tôi để nhận được lợi ích to lớn khi giúp các ca sĩ tăng hạng các ca khúc trên Zing MP3.">
+    <meta property="og:site_name" content="ZingChart - Dịch vụ tăng hạng trên Zing MP3">
+    <meta property="article:section" content="ZingChart - Dịch vụ tăng hạng trên Zing MP3 giúp ca sĩ nâng cao thứ hạng  các sản phẩm âm nhạc chất lượng trên BXH . Tham gia cùng chúng tôi để nhận được lợi ích to lớn khi giúp các ca sĩ tăng hạng các ca khúc trên Zing MP3.">
+    <meta property="article:tag" content="ZingChart, Youtube, Tiktok, Instagram">
+    <title>ZingChart - Hồng Ân Entertaiment</title>
+
+    <!-- manifest meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="~/Assets/assets/images/loading.png" sizes="180x180">
+    <link rel="icon" href="~/Assets/assets/images/loading.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="~/Assets/assets/images/loading.png" sizes="16x16" type="image/png">
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- bootstrap icons -->
+    <link href="~/Assets/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- nouislider CSS -->
+    <link href="~/Assets/assets/vendor/nouislider/nouislider.min.css" rel="stylesheet">
+    <link href="~/Assets/toastr/toastr.css" rel="stylesheet" />
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="~/Assets/assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+
+    <!-- style css for this template -->
+    <link href="~/Assets/assets/css/style.css?v=@DateTime.Now.ToString("yyyyMMddHHmmss")" rel="stylesheet" id="style">
+</head>
+
+<body class="body-scroll" data-page="home">
+
+    <!-- loader section -->
+    <div class="container-fluid loader-wrap">
+        <div class="row h-100">
+            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                <img src="~/Assets/assets/images/loading.png" style="width: 60px; height: 60px" />
+                <p class="pt-2">HỒNG ÂN ENTERTAIMENT<br><strong>VUI LÒNG CHỜ...</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- loader section ends -->
+    <!-- Sidebar main menu -->
+    <div class="sidebar-wrap  sidebar-overlay">
+        <!-- Add pushcontent or fullmenu instead overlay -->
+        <div class="closemenu text-opac">Close Menu</div>
+        <div class="sidebar">
+            <div class="row mt-4 mb-3">
+                <div class="col-auto">
+                    <figure class="avatar avatar-60 rounded mx-auto my-1">
+                        <img src="~/Assets/assets/images/Avatar12.png" alt="">
+                    </figure>
+                </div>
+                <div class="col align-self-center ps-0">
+                    @if (mems != null)
+                    {
+                        <h6 class="mb-0">@mems.Username</h6>
+                        <p class="text-opac">Số dư: <span class="moneyReload"></span></p>
+                    }
+                    else
+                    {
+                        <h6 class="mb-0">Khách vãng lai</h6>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills">
+                        @if (mems != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-house-door"></i></div>
+                                    <div class="col">Trang chủ</div>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/thong-tin-ca-nhan" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi-person-circle"></i></div>
+                                    <div class="col">Thông tin cá nhân</div>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/don-hang-cua-toi" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-cart"></i></div>
+                                    <div class="col">Đơn hàng của tôi</div>
+                                    <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/thong-tin-ca-nhan" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-bank"></i></div>
+                                    <div class="col">Rút tiền</div>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/lich-su-rut-tien" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-file-earmark-text"></i></div>
+                                    <div class="col">Lịch sử rút tiền</div>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dang-xuat" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-box-arrow-right"></i></div>
+                                    <div class="col">Đăng xuất</div>
+                                    <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dang-nhap" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-box-arrow-left"></i></div>
+                                    <div class="col">Đăng nhập</div>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dang-xuat" tabindex="-1">
+                                    <div class="avatar avatar-40 rounded icon"><i class="bi bi-box-arrow-right"></i></div>
+                                    <div class="col">Đăng xuất</div>
+                                    <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar main menu ends -->
+    <!-- Begin page -->
+    <main class="h-100 has-header">
+        @RenderBody()
+        <div class="main-container container">
+            <div class="row pb-2">
+                <div class="col-12 text-center text-white">
+                    <script>document.write(new Date().getFullYear())</script> © Copyright - CÔNG TY CỔ PHẦN TRUYỀN THÔNG HỒNG ÂN ENTERTAIMENT
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Page ends-->
+    <!-- add cart modal ends -->
+    <!-- Required jquery and libraries -->
+    <script src="~/Assets/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Assets/assets/js/popper.min.js"></script>
+    <script src="~/Assets/assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
+    <!-- cookie js -->
+    <script src="~/Assets/assets/js/jquery.cookie.js"></script>
+
+    <!-- swiper script -->
+    <script src="~/Assets/assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="~/Assets/assets/vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- Customized jquery file  -->
+    <script src="~/Assets/assets/js/main.js"></script>
+    <script src="~/Assets/assets/js/color-scheme.js"></script>
+
+    <!-- page level custom script -->
+    <script src="~/Assets/assets/js/app.js"></script>
+    <!-- script js -->
+    <script src="~/Assets/toastr/toastr.js"></script>
+    <script src="~/Assets/controller/base.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+    <script src="~/Assets/controller/accounting.js"></script>
+    <script src="~/Assets/controller/@(controller).js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>
+
+
+
